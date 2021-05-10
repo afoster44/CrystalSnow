@@ -9,12 +9,22 @@ export class WorkOrdersController extends BaseController {
       .get('', this.getAll)
       // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
       .use(Auth0Provider.getAuthorizedUserInfo)
+      .get('/:id', this.getById)
       .post('', this.create)
   }
 
   async getAll(req, res, next) {
     try {
       const data = await workOrdersService.find()
+      return res.send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getById(req, res, next) {
+    try {
+      const data = await workOrdersService.findById(req.params.id)
       return res.send(data)
     } catch (error) {
       next(error)

@@ -7,6 +7,7 @@ const WorkOrder = new Schema(
     company: { type: String, required: true },
     description: { type: String, required: true },
     phone: { type: Number, required: true },
+    email: { type: String, required: true },
     location: { type: String, required: true },
     creatorId: { type: String, ref: 'Account', required: true }
   },
