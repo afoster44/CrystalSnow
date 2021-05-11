@@ -37,7 +37,8 @@
 
 <script>
 import { reactive } from '@vue/reactivity'
-import { logger } from '../utils/Logger'
+import { workOrdersService } from '../services/WorkOrdersService'
+
 export default {
   name: 'InputFormComponent',
   setup() {
@@ -46,8 +47,8 @@ export default {
     })
     return {
       state,
-      createWorkOrder() {
-        logger.log(state.workOrder)
+      async createWorkOrder() {
+        await workOrdersService.createWorkOrder(state.workOrder)
       }
     }
   },
