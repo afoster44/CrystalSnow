@@ -20,6 +20,12 @@ const routes = [
     name: 'Account',
     component: loadPage('AccountPage'),
     beforeEnter: authGuard
+  },
+  {
+    path: '/workorderspage',
+    name: 'WorkOrdersPage',
+    component: loadPage('WorkOrdersPage'),
+    beforeEnter: authGuard
   }
 ]
 
