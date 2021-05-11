@@ -38,6 +38,7 @@
 <script>
 import { reactive } from '@vue/reactivity'
 import { workOrdersService } from '../services/WorkOrdersService'
+import Swal from 'sweetalert2'
 
 export default {
   name: 'InputFormComponent',
@@ -48,8 +49,33 @@ export default {
     return {
       state,
       async createWorkOrder() {
-        await workOrdersService.createWorkOrder(state.workOrder)
+        Swal.fire({
+          title: 'Are you sure?',
+          text: 'You will not be able to recover this imaginary file!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Please create my request!',
+          cancelButtonText: 'I need to make a change'
+        }).then(async(result) => {
+          if (result.value) {
+            await workOrdersService.createWorkOrder(state.workOrder)
+            Swal.fire(
+              'Work order recieved!',
+              'Thank you for choosing Crystal Snow!',
+              'success'
+            )
+            // For more information about handling dismissals please visit
+            // https://sweetalert2.github.io/#handling-dismissals
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+              'Cancelled',
+              'Please make your changes',
+              'error'
+            )
+          }
+        })
       }
+
     }
   },
   components: {}
