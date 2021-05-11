@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid">
-    <div class="row about-section" ref="about">
-      <div class="col-6 bg-success">
-        <h1>hello</h1>
+    <div class="row about-section bg-light" ref="about">
+      <div class="col-6 d-flex align-items-center justify-content-center">
+        <h3>Crystal Snow is the leading distributer of ice melt in South Eastern Idaho, based out of Idaho Falls. Crystal Snow is a family owned and operated buisness. </h3>
       </div>
-      <div class="col-6 bg-primary">
+      <div class="col-6">
         <h1>
           hello
         </h1>
@@ -26,6 +26,6 @@ export default {
 <style lang="scss" scoped>
 
 .about-section {
-  min-height: 50vh;
+  min-height: 100vh;
 }
 </style>
