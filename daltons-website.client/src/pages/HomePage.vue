@@ -20,19 +20,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="container-fluid">
-        <div class="row about-section" ref="about">
-          <div class="col-6 bg-success">
-            <h1>hello</h1>
-          </div>
-          <div class="col-6 bg-primary">
-            <h1>
-              hello
-            </h1>
-          </div>
-        </div>
-      </div>
+    <div class="row about-section" ref="about">
+      <AboutSectionComponent />
     </div>
   </div>
 </template>
@@ -82,8 +71,8 @@ export default {
 
 }
 
-.about-section {
-  min-height: 50vh;
-}
+// .about-section {
+//   min-height: 50vh;
+// }
 
 </style>
