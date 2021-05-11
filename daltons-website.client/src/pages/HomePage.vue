@@ -67,6 +67,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .main-picture {
   min-width: 100vw;
   min-height: 100vh;
